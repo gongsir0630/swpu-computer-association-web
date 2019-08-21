@@ -112,17 +112,13 @@ body{background: #fff;}
 
 /** 义诊 */
 .banner.case{background: url(../img/nav_img2.jpg) no-repeat center top; background-size: cover;}
-.main-case{padding: 30px 0 75px;}
-.main-case .content{width: 48%; text-align: center; padding-top: 120px; padding-bottom: 20px; border-bottom: 2px solid #c9c9c9;}
-.main-case .content.even{margin-left: 2%;}
-.main-case .content .case-img{border: 1px solid #e2e2e2; overflow: hidden;}
-.main-case .content .case-img img{width: 100%; transition: 2s;}
-.main-case .content .case-img img:hover{transform: scale(1.2,1.2); transition: 2s;}
-.main-case .content p.lable{padding-top: 13px; font-size: 30px; line-height: 76px;}
-.main-case .content p{font-size: 18px; line-height: 32px; color: #505050;}
-.main-case #casePage .layui-laypage{display: block; text-align: center; margin-top: 100px;}
-.main-case #casePage .layui-laypage a,.main-case #casePage .layui-laypage span{font-size: 18px; line-height: 40px; height: 40px; margin-right: 20px; border-radius: 3px; color: #e3e3e3;}
-
+.main-case{padding-bottom: 130px;}
+.main-case ul.casetab{padding: 100px 0; text-align: center;}
+.main-case ul.casetab li{display: inline-block; padding: 0 22px; margin-left: 15px; font-size: 20px; line-height: 46px; color: #b5b5b5; border: 1px solid #e2e2e2; border-radius: 3px; cursor: pointer;}
+.main-case ul.casetab li:first-child{margin-left: 0;}
+.main-case ul.casetab li.layui-this,
+.main-case ul.casetab li:hover{color: #2ab5a3; border-color: #afddd7; transition: 0.3s;}
+.main-case .tabQuery{display: none;}
 
 /** 关于 */
 .banner.about{background: url(../img/nav_img4.jpg) no-repeat center top; background-size: cover;}
@@ -130,8 +126,8 @@ body{background: #fff;}
 .main-about ul.aboutab{padding: 100px 0; text-align: center;}
 .main-about ul.aboutab li{display: inline-block; padding: 0 22px; margin-left: 15px; font-size: 20px; line-height: 46px; color: #b5b5b5; border: 1px solid #e2e2e2; border-radius: 3px; cursor: pointer;}
 .main-about ul.aboutab li:first-child{margin-left: 0;}
-.main-about ul.aboutab li.layui-this
-,.main-about ul.aboutab li:hover{color: #2ab5a3; border-color: #afddd7; transition: 0.3s;}
+.main-about ul.aboutab li.layui-this,
+.main-about ul.aboutab li:hover{color: #2ab5a3; border-color: #afddd7; transition: 0.3s;}
 .main-about .tabJob, .main-about .tabIntro{display: none;}
 /*协会简介*/
 .main-about .tabIntro{padding-bottom: 15px;}
