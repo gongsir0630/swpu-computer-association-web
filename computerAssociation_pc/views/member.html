@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+		<title>西柚计算机协会-会员中心</title>
+		<link rel="stylesheet" href="../res/layui/css/layui.css" />
+		<link rel="stylesheet" href="../res/static/css/index.css" />
+	</head>
+
+	<body>
+		<!--nav部分-->
+		<div class="nav">
+			<div class="layui-container">
+				<!--协会logo-->
+				<div class="nav-logo">
+					<a href="index.html">
+						<p class="title" style="font-size: 30px;">
+							<img src="http://39.106.218.57/img/ico_001.png" alt="西柚计算机协会" /> 西柚计算机协会
+						</p>
+					</a>
+				</div>
+				<div class="nav-list">
+					<button>
+						<span></span><span></span><span></span>
+					</button>
+					<ul class="layui-nav" lay-filter="">
+						<li class="layui-nav-item">
+							<a href="activity.html">活动</a>
+						</li>
+						<li class="layui-nav-item">
+							<a href="news.html">动态</a>
+						</li>
+						<li class="layui-nav-item">
+							<a href="case.html">义诊</a>
+						</li>
+						<li class="layui-nav-item">
+							<a href="about.html">关于</a>
+						</li>
+						<li class="layui-nav-item">
+							<a href="#">资源</a>
+						</li>
+						<li class="layui-nav-item layui-this">
+							<a href="member.html">会员中心</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--main部分-->
+		<div class="layui-container " style="margin-top: 150px;">
+			<div class="layui-tab layui-tab-card" style="width: 800px; margin: 0 auto;">
+				<ul class="layui-tab-title">
+					<li class="layui-this">登录</li>
+					<li>注册</li>
+				</ul>
+				<div class="layui-tab-content">
+					<div class="layui-tab-item layui-show ">
+						<form class="layui-form layui-form-pane" action="post" lay-filter="example">
+							<div class="layui-form-item">
+								<label class="layui-form-label">学号</label>
+								<div class="layui-input-block">
+									<input type="text" name="username" required lay-verify="username" autocomplete="off" class="layui-input" value="">
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<label class="layui-form-label">密码</label>
+								<div class="layui-input-block">
+									<input type="password" name="password" required lay-verify="password" placeholder="（学号后6位）" autocomplete="off" class="layui-input" value="">
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<div class="layui-input-block">
+									<button class="layui-btn" lay-submit lay-filter="login" id="login">登录</button>
+									<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="layui-tab-item">
+						<form class="layui-form " action="post" lay-filter="example">
+							<div class="layui-form-item">
+								<label class="layui-form-label"><i class="layui-icon layui-icon-username" style="font-size: 30px;"></i></label>
+								<div class="layui-input-block">
+									<input type="text" name="name" required lay-verify="name" placeholder="姓名（必填）" autocomplete="off" class="layui-input">
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<label class="layui-form-label"><i class="layui-icon layui-icon-form" style="font-size: 30px;"></i></label>
+								<div class="layui-input-block">
+									<input type="text" name="stunum" required lay-verify="stunum" placeholder="学号（必填）" autocomplete="off" class="layui-input">
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<label class="layui-form-label"><i class="layui-icon layui-icon-home" style="font-size: 30px;"></i></label>
+								<div class="layui-input-block">
+									<input type="text" name="college" required lay-verify="college" placeholder="学院（必填）" autocomplete="off" class="layui-input">
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<label class="layui-form-label"><i class="layui-icon layui-icon-read" style="font-size: 30px;"></i></label>
+								<div class="layui-input-block">
+									<input type="text" name="major" required lay-verify="major" placeholder="专业（必填）" autocomplete="off" class="layui-input">
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<label class="layui-form-label"><i class="layui-icon layui-icon-diamond" style="font-size: 30px;"></i></label>
+								<div class="layui-input-block">
+									<input type="text" name="grade" required lay-verify="grade" placeholder="年级（必填）" autocomplete="off" class="layui-input">
+								</div>
+							</div>
+
+							<div class="layui-form-item">
+								<label class="layui-form-label"><i class="layui-icon layui-icon-flag" style="font-size: 30px;"></i></label>
+								<div class="layui-input-block">
+									<select name="political" lay-verify="political">
+										<option value="">请选择政治面貌</option>
+										<option value="党员">党员</option>
+										<option value="团员">团员</option>
+										<option value="群众">群众</option>
+									</select>
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<label class="layui-form-label"><i class="layui-icon layui-icon-user" style="font-size: 30px;"></i></label>
+								<div class="layui-input-block">
+									<select name="post" lay-verify="post">
+										<option value="">请选择报名职务</option>
+										<option value="理事">理事</option>
+										<option value="会员">会员</option>
+									</select>
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<label class="layui-form-label"><i class="layui-icon layui-icon-login-qq" style="font-size: 30px;"></i></label>
+								<div class="layui-input-block">
+									<input type="text" name="qq" required lay-verify="qq" placeholder="QQ（必填）" autocomplete="off" class="layui-input">
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<label class="layui-form-label"><i class="layui-icon layui-icon-edit" style="font-size: 30px;"></i></label>
+								<div class="layui-input-block">
+									<input type="text" name="dormitory" required lay-verify="dormitory" placeholder="宿舍号（必填）" autocomplete="off" class="layui-input">
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<label class="layui-form-label"><i class="layui-icon layui-icon-cellphone"style="font-size: 30px;"></i></label>
+								<div class="layui-input-block">
+									<input type="text" name="phone" required lay-verify="phone" placeholder="手机号码（必填）" autocomplete="off" class="layui-input">
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<div class="layui-input-block">
+									<button class="layui-btn" lay-submit lay-filter="register">立即注册</button>
+									<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+								</div>
+							</div>
+						</form>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+
+		<!-- footer部分 -->
+
+		<script src="../res/layui/layui.js"></script>
+		<script>
+			layui.use(['form', 'element', 'layer', 'jquery'], function() {
+
+				var layer = layui.layer;
+				var form = layui.form;
+				var element = layui.element;
+				var $ = layui.$;
+				//path
+				var str = "http://www.gongsir.club/computerAssociation";
+				sessionStorage.setItem('path', str);
+				var path = sessionStorage.getItem('path');
+
+				//自定义验证规则
+				form.verify({
+					username: function(value) {
+						if(value.length == 0) {
+							return '学号不能为空';
+						}
+						if(!new RegExp("^[a-zA-Z0-9_\u4e00-\u9fa5\\s·]+$").test(value)) {
+							return '学号不能有特殊字符';
+						}
+						if(/(^\_)|(\__)|(\_+$)/.test(value)) {
+							return '学号首尾不能出现下划线\'_\'';
+						}
+
+					},
+					password: [
+						/^[\S]{6,12}$/, '密码必须6到12位，且不能出现空格'
+					],
+
+				});
+				form.verify({
+					name: function(value) {
+						if(value.length == 0) {
+							return '姓名不能为空';
+						}
+						if(value.length < 2 && value.length > 0) {
+							return '姓名至少为两个字';
+						}
+						if(!new RegExp("^[a-zA-Z0-9_\u4e00-\u9fa5\\s·]+$").test(value)) {
+							return '用户名不能有特殊字符';
+						}
+						if(/(^\_)|(\__)|(\_+$)/.test(value)) {
+							return '用户名首尾不能出现下划线\'_\'';
+						}
+
+					},
+					stunum: function(value) {
+						if(value.length == 0) {
+							return '学号不能为空';
+						}
+						if(value.length != 12) {
+							return '学号必须为12位';
+						}
+						if(!new RegExp("^[a-zA-Z0-9_\u4e00-\u9fa5\\s·]+$").test(value)) {
+							return '学号不能有特殊字符';
+						}
+						if(/(^\_)|(\__)|(\_+$)/.test(value)) {
+							return '学号首尾不能出现下划线\'_\'';
+						}
+
+					},
+					grade: [
+						/^[\S]{4}$/, '年级格式eg：2017'
+					],
+					phone: [
+						/^\d{11}$/, '手机号码不正确'
+					],
+
+					qq: [
+						/^\d{5,10}$/, 'QQ输入不正确'
+					],
+
+				});
+				//初始化
+				form.val('example', {
+					"username": "201731061426" // "name": "value"
+						,
+					"password": "123456"
+				})
+				form.val('example', {
+					"name": "龚涛",
+					"stunum": "201731061426",
+					"college": "计科院",
+					"major": "计算机科学与技术",
+					"grade": "2017",
+					"political": 0,
+					"post": 0,
+					"qq": "3198307775",
+					"dormitory": "15-127",
+					"phone": "17361040630",
+				})
+				//监听登录提交
+				form.on('submit(login)', function(data) {
+					$.ajax({
+						type: "post",
+						url: path + "/api/user/login",
+
+						data: data.field,
+						dataType: 'JSON',
+						success: function(res) {
+							//登录成功
+							if(res.data.isAccess == true) {
+
+								sessionStorage.setItem('user', JSON.stringify(res.data.user));
+
+								location.href = "memberNewsMynews.html";
+
+							}
+							//密码错误
+							if(res.count == 1 && res.data.isAccess == false) {
+								layer.alert(res.data.msg, {
+									icon: 2,
+									skin: 'layui-layer-molv'
+
+								});
+							}
+							//用户名不存在
+							if(res.count == 0 && res.data.isAccess == false) {
+								layer.alert(res.data.msg, {
+									icon: 2,
+									skin: 'layui-layer-molv'
+								});
+							}
+						}
+
+					});
+
+					return false;
+				});
+				//监听注册
+				form.on('submit(register)', function(data) {
+					$.ajax({
+						type: "post",
+						url: "http://www.gongsir.club/computerAssociation/api/user/reg",
+						data: data.field,
+						dataType: 'JSON',
+						success: function(res) {
+							layer.alert("注册成功");
+							location.href = "member.html";
+						}
+					});
+					return false;
+				});
+			});
+		</script>
+
+	</body>
+
+</html>
