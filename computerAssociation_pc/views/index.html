@@ -40,7 +40,7 @@
 		<!-- banner部分 -->
 		<div>
 			<div class="layui-carousel" id="banner">
-				<div carousel-item>
+				<div carousel-item id="banner_content">
 					<div>
 						<img src="../res/static/img/banner1.jpg">
 						<div class="panel">
@@ -192,6 +192,27 @@
 			layui.config({
 				base: '../res/static/js/'
 			}).use('firm');
+		</script>
+		<script>
+			layui.use('layer',function(){
+				var $ = layui.$;
+				$(function(){
+					$.post("http://localhost/computerAssociation_war_exploded/api/img/show", {
+						imgClass:'index'
+					}, function(res) {
+						if (res.data.status === true) {
+							for(var i=0;i<res.count;i++){
+								document.getElementById("banner_content").append("<div><img src='http://localhost"+res.data.data[i].imgLink+"'><div class='panel'><p class='title'>"+res.data.data[i].imgTitle+"</p><p>"+res.data.data[i].imgDesc+"</p></div></div>");
+							}
+						} else if (res.data.status === false) {
+							layer.msg(res.data.msg, {
+								icon: 2,
+								time: 1500
+							});
+						}
+					});
+				});
+			});
 		</script>
 	</body>
 
