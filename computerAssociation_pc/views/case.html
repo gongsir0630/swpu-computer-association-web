@@ -17,8 +17,7 @@
 				<div class="nav-logo">
 					<a href="./index.html">
 						<p class="title" style="font-size: 30px;">
-							<img src="http://39.106.218.57/img/ico_001.png" alt="西柚计算机协会">
-							西柚计算机协会
+							<img src="http://39.106.218.57/img/ico_001.png" alt="西柚计算机协会"> 西柚计算机协会
 						</p>
 					</a>
 				</div>
@@ -27,12 +26,24 @@
 						<span></span><span></span><span></span>
 					</button>
 					<ul class="layui-nav" lay-filter="">
-						<li class="layui-nav-item"><a href="activity.html">活动</a></li>
-						<li class="layui-nav-item"><a href="news.html">动态</a></li>
-						<li class="layui-nav-item layui-this"><a href="case.html">义诊</a></li>
-						<li class="layui-nav-item"><a href="about.html">关于</a></li>
-						<li class="layui-nav-item"><a href="#">资源</a></li>
-						<li class="layui-nav-item"><a href="#">会员中心</a></li>
+						<li class="layui-nav-item">
+							<a href="activity.html">活动</a>
+						</li>
+						<li class="layui-nav-item">
+							<a href="news.html">动态</a>
+						</li>
+						<li class="layui-nav-item layui-this">
+							<a href="case.html">义诊</a>
+						</li>
+						<li class="layui-nav-item">
+							<a href="about.html">关于</a>
+						</li>
+						<li class="layui-nav-item">
+							<a href="#">资源</a>
+						</li>
+						<li class="layui-nav-item">
+							<a href="memberNewsMynews.html">会员中心</a>
+						</li>
 					</ul>
 				</div>
 			</div>
@@ -47,16 +58,126 @@
 		<!-- main部分 -->
 		<div class="main-case">
 			<div class="layui-container">
-				<div class="layui-row">
+				<div class="layui-row" style="width: 800px; margin: 0 auto;">
 					<ul class="casetab">
 						<li class="layui-this">立即预约</li>
 						<li>预约查询</li>
 					</ul>
 					<div class="tabBook">
-						预约
+						<form class="layui-form layui-form-pane" action="post" lay-filter="example">
+							<div class="layui-form-item">
+								<label class="layui-form-label">姓名</label>
+								<div class="layui-input-block">
+									<input type="text" name="name" id="name" required lay-verify="name" placeholder="必填" autocomplete="off" class="layui-input">
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<label class="layui-form-label">专业</label>
+								<div class="layui-input-block">
+									<input type="text" name="major" required lay-verify="major" placeholder="必填" autocomplete="off" class="layui-input">
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<label class="layui-form-label">QQ/微信</label>
+								<div class="layui-input-block">
+									<input type="text" name="qq" required lay-verify="QQ" placeholder="必填" autocomplete="off" class="layui-input">
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<label class="layui-form-label">手机</label>
+								<div class="layui-input-block">
+									<input type="text" name="mobilePhone" required lay-verify="mobilePhone" placeholder="必填(查询结果时所需)" autocomplete="off" class="layui-input">
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<label class="layui-form-label">性别</label>
+								<div class="layui-input-block">
+									<input type="radio" name="sex" value="男" title="男" checked="" class="layui-input">
+									<input type="radio" name="sex" value="女" title="女" class="layui-input">
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<label class="layui-form-label">年级</label>
+								<div class="layui-input-block">
+									<input type="radio" name="grade" value="大一" title="大一" checked="" class="layui-input">
+									<input type="radio" name="grade" value="大二" title="大二" class="layui-input">
+									<input type="radio" name="grade" value="大三" title="大三" class="layui-input">
+									<input type="radio" name="grade" value="大四" title="大四" class="layui-input">
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<label class="layui-form-label">义诊需求</label>
+								<div class="layui-input-block">
+									<select name="demand" lay-verify="demand">
+										<option value="预约">预约电脑义诊</option>
+										<option value="资源">获取常见软件资源</option>
+										<option value="其他">其他</option>
+									</select>
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<label class="layui-form-label">电脑品牌</label>
+								<div class="layui-input-block">
+									<select name="brand" lay-verify="brand">
+										<option value="联想">联想</option>
+										<option value="ThinkPad">ThinkPad</option>
+										<option value="戴尔">戴尔</option>
+										<option value="华硕">华硕</option>
+										<option value="苹果">苹果</option>
+										<option value="惠普">惠普</option>
+										<option value="宏碁">宏碁</option>
+										<option value="三星">三星</option>
+										<option value="雷神">雷神</option>
+										<option value="神舟">神舟</option>
+										<option value="雷蛇">雷蛇</option>
+										<option value="索尼">索尼</option>
+										<option value="微星">微星</option>
+										<option value="未来人类">未来人类</option>
+										<option value="机械师">机械师</option>
+										<option value="东芝">东芝</option>
+										<option value="技嘉">技嘉</option>
+										<option value="微软">微软</option>
+										<option value="机械革命">机械革命</option>
+										<option value="其他">其他</option>
+									</select>
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<label class="layui-form-label">电脑型号</label>
+								<div class="layui-input-block">
+									<input type="text" name="model" lay-verify="model" placeholder="选填" autocomplete="off" class="layui-input">
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<label class="layui-form-label">故障表现</label>
+								<div class="layui-input-block">
+									<textarea placeholder="请输入故障表现" class="layui-textarea" name="description"></textarea>
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<div class="layui-input-block">
+									<button class="layui-btn" lay-submit lay-filter="submission">提交</button>
+									<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+								</div>
+							</div>
+						</form>
 					</div>
-					<div class="tabQuery">
-						查询
+					<div class="tabQuery">	
+							<p style="text-align: center; font-size: 25px ;padding-bottom: 30px;">查询预约信息</p>
+							<form class="layui-form layui-form-pane" action="post" lay-filter="">
+								<div class="layui-form-item" style="margin-bottom: 30px;font-size: 17px;">
+									<label class="layui-form-label">手机号码</label>
+									<div class="layui-input-block">
+										<input type="text" name="phone" required lay-verify="phone" placeholder="填写预约时的手机号码" autocomplete="off" class="layui-input">
+									</div>
+								</div>
+								<div class="layui-form-item">
+									<div class="layui-input-block">
+										<button class="layui-btn" lay-submit lay-filter="search">立即查询</button>
+										<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+									</div>
+								</div>
+							</form>
 					</div>
 				</div>
 			</div>
@@ -99,6 +220,76 @@
 			layui.config({
 				base: '../res/static/js/'
 			}).use('firm');
+			layui.use(['form', 'element', 'layer', 'jquery'], function() {
+
+				var layer = layui.layer;
+				var form = layui.form;
+				var element = layui.element;
+				var $ = layui.$;
+				var str = "http://www.gongsir.club/computerAssociation";
+				sessionStorage.setItem('path', str);
+				var path = sessionStorage.getItem('path');
+				
+				//自定义验证规则
+				form.verify({
+					username: function(value) {
+						if(value.length == 0) {
+							return '姓名不能为空';
+						}
+						if(value.length < 2 && value.length > 0) {
+							return '姓名至少为两个字';
+						}
+						if(!new RegExp("^[a-zA-Z0-9_\u4e00-\u9fa5\\s·]+$").test(value)) {
+							return '姓名不能有特殊字符';
+						}
+						if(/(^\_)|(\__)|(\_+$)/.test(value)) {
+							return '用户名首尾不能出现下划线\'_\'';
+						}
+					},
+					phone: [
+						/^\d{11}$/, '手机号码不正确'
+					],
+				});
+
+				//监听预约提交
+				form.on('submit(submission)', function(data) {
+
+					$.ajax({
+						type: "post",
+						url: path + "/api/book/add",
+						data: data.field,
+						dataType: 'JSON',
+						success: function(res) {
+							layer.alert("预约成功",{icon: 1},function(){
+							location.href = "case.html";
+						});   
+						}
+					});
+					return false;
+				});
+
+				//监听查询提交
+				form.on('submit(search)', function(data) {                   
+					$.ajax({
+						type: "get",
+						url: path + "/api/book/list",
+						data: data.field,
+						dataType: 'JSON',
+						success: function(res) {
+					
+							sessionStorage.setItem('list',JSON.stringify(res.data.list));
+							console.log(JSON.parse(sessionStorage.getItem('list')));							
+							layer.alert("查询成功",{icon: 1},function(){								
+								location.href="caseNews.html";								
+							});
+						}
+					});
+
+					return false;
+				});
+
+			});
 		</script>
 	</body>
+
 </html>
