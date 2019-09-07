@@ -30,7 +30,7 @@
 							<a href="activity.html">活动</a>
 						</li>
 						<li class="layui-nav-item">
-							<a href="news.html">动态</a>
+							<a href="#">动态</a>
 						</li>
 						<li class="layui-nav-item">
 							<a href="case.html">义诊</a>
@@ -222,8 +222,8 @@
 				sessionStorage.setItem('path', str);
 				
 				$(function() {
-					$.post("http://localhost/computerAssociation_war_exploded/api/img/show", {
-						imgClass: 'index'
+					$.post(sessionStorage.getItem('path')+"/api/img/show", {
+						imgClass: 'logo'
 					}, function(res) {
 						if(res.data.status === true) {
 							for(var i = 0; i < res.count; i++) {
