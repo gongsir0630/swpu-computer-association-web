@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+		<title>西柚计算机协会-会员信息</title>
+		<style type="text/css">
+			.right {
+				text-align: right;
+				padding-right: 100px;
+			}
+		</style>
+		<link rel="stylesheet" href="../res/layui/css/layui.css" />
+		<link rel="stylesheet" href="../res/static/css/index.css" />
+		<script src="../res/layui/layui.js"></script>
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script>
+        	function del(id){
+        		
+      		    var path = sessionStorage.getItem("path");
+			
+				$.ajax({
+					type: "post",
+					url: path + "/api/book/del",
+					data: {
+						id:id
+					},
+					dataType: 'JSON',
+					success: function(res) {
+						//修改成功						
+						layer.alert("删除成功",{icon: 1},function(){
+							location.href="caseNews.html";
+						});
+						
+						sessionStorage.setItem('list',JSON.stringify(res.data.list));						
+					}
+
+				});
+			}
+        	
+        </script>
+	</head>
+
+	<body>
+		<!--nav部分-->
+		<div class="nav">
+			<div class="layui-container">
+				<!--协会logo-->
+				<div class="nav-logo">
+					<a href="index.html">
+						<p class="title" style="font-size: 30px;">
+							<img src="http://39.106.218.57/img/ico_001.png" alt="西柚计算机协会" /> 西柚计算机协会
+						</p>
+					</a>
+				</div>
+				<div class="nav-list">
+					<button>
+						<span></span><span></span><span></span>
+					</button>
+					<ul class="layui-nav" lay-filter="">
+						<li class="layui-nav-item">
+							<a href="activity.html">活动</a>
+						</li>
+						<li class="layui-nav-item">
+							<a href="#">动态</a>
+						</li>
+						<li class="layui-nav-item layui-this">
+							<a href="case.html">义诊</a>
+						</li>
+						<li class="layui-nav-item">
+							<a href="about.html">关于</a>
+						</li>
+						<li class="layui-nav-item">
+							<a href="#">资源</a>
+						</li>
+						<li class="layui-nav-item ">
+							<a href="memberNewsMynews.html">会员中心</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!--main-->
+		<div class="main" id="main">
+		</div>
+     
+     
+     
+	</body>
+	
+	
+	<script>
+		       
+		//注意：导航 依赖 element 模块，否则无法进行功能性操作
+//		$("button").attr("id",dt.id);
+//            console.log($("button").attr("id"));
+//		
+        
+		layui.use(['form', 'element', 'layer', 'jquery'], function() {
+
+			var layer = layui.layer;
+			var form = layui.form;
+			var element = layui.element;
+			var $ = layui.$;
+
+			var path = sessionStorage.getItem('path');
+			
+			var listObj = JSON.parse(sessionStorage.getItem('list'));			
+			
+			for(var i = 0; i < listObj.length; i++) {
+				var dt = listObj[i];
+				
+				var dvObj = $("<div id='dv' class='layui-container' style='margin-top: 100px;width: 800px;background-color: rgb(238,238,238,0.5);'></div>");
+				$("#main").append(dvObj);
+				var firstDiv = $("<div style='height: 50px;background-color:#009688 ;'></div>").appendTo(dvObj);
+				var pObj = $("<p style='padding-left: 200px;font-size: 20px; line-height: 50px;color: white;'>" + dt.statusText + "</p>").appendTo(firstDiv);
+				$("<i class='layui-icon' style='font-size: 20px;margin-right: 10px; '>&#xe702;</i>").prependTo(pObj);
+				var secondDiv = $("<div style='margin-top: 10px;'></div>").appendTo(dvObj);
+				var tableObj = $("<table class='layui-table' lay-skin='nob' style='width: 400px;margin: 0 auto;'></table>").appendTo(secondDiv);
+				$("<tr><td class='right'>姓名</td><td>" + dt.name + "</td></tr>").appendTo(tableObj);
+				$("<tr><td class='right'>手机</td><td>" + dt.mobilePhone + "</td></tr>").appendTo(tableObj);
+				$("<tr><td class='right'>QQ/微信</td><td>" + dt.qq + "</td></tr>").appendTo(tableObj);
+				$("<tr><td class='right'>义诊需求</td><td>" + dt.demand + "</td></tr>").appendTo(tableObj);
+				$("<tr><td class='right'>电脑品牌</td><td>" + dt.brand + "</td></tr>").appendTo(tableObj);
+				$("<tr><td class='right'>故障描述</td><td>" + dt.description + "</td></tr>").appendTo(tableObj);
+				$("<tr><td class='right'>申请时间</td><td>" + dt.signupTime + "</td></tr>").appendTo(tableObj);
+				$("<tr><td class='right'>处理时间</td><td>" + dt.processTime + "</td></tr>").appendTo(tableObj);
+				$("<tr><td class='right'>处理结果</td><td>" + dt.processResult + "</td></tr>").appendTo(tableObj);
+				$("<button onclick='del("+dt.id+")' class='layui-btn' lay-submit lay-filter='delet' style=' margin-left: 200px; margin-top: 10px;margin-bottom:10px; width: 400px;'>删除</button>").appendTo(dvObj);
+
+			}
+    			
+       }); 
+			
+	</script>
+
+</html>
